@@ -42,3 +42,10 @@ Resources:
             Principal:
               Service: !Sub 'states.${AWS::Region}.amazonaws.com'
             Action: 'sts:AssumeRole'
+      Policies:
+        - PolicyName: lambda
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action: 'lambda:InvokeFunction'
+                Resource: '*'
